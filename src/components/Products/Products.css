@@ -1,0 +1,17 @@
+.price-area{
+    display: flex;
+    margin: auto;
+    gap: 100px;
+    padding-bottom: 10px;
+}
+.card{
+    margin-top:30px;
+    height: 400px;
+}
+.product-logo{
+    text-align: center;
+}
+.product-logo img{
+    margin-top: 15px;
+    width: 50%;
+}
