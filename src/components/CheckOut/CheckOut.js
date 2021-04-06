@@ -30,7 +30,7 @@ const CheckOut = () => {
     };
     const handleOrder=() =>{
        const newOrder= {...loggedInUser,...selectedDate,...productInfo}
-       fetch('http://localhost:4000/addOrder',{
+       fetch('https://tranquil-cliffs-66527.herokuapp.com/addOrder',{
            method:'POST',
            headers: {'Content-type': 'application/json'},
            body: JSON.stringify(newOrder)
@@ -41,7 +41,7 @@ const CheckOut = () => {
        })
     }
     useEffect(() => {
-        fetch('http://localhost:4000/product/'+id)
+        fetch('https://tranquil-cliffs-66527.herokuapp.com/product/'+id)
             .then(res => res.json())
             .then(data => setProductInfo(data))
     }, [])
