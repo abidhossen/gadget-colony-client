@@ -1,11 +1,48 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../App';
+import { Table } from 'react-bootstrap';
 import Header from '../Header/Header';
+import './Orders.css'
 
 const Orders = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [orders, setOrders] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:4000/orders?email=' + loggedInUser.email)
+            .then(res => res.json())
+            .then(data => {
+                setOrders(data);
+            })
+    }, [])
     return (
         <div>
             <Header></Header>
-            <h1>This is order</h1>
+            
+            <div className="table-container">
+            <h3 className='text-center'>You have {orders.length} {orders.length>1?'orders':'order'}</h3>
+                <Table striped bordered hover className="text-center">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Order Date</th>
+                            <th>Order Time</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            orders.map(order => <tr>
+                                <td>{order.name}</td>
+                                <td>${order.price}</td>
+                                <td>{(new Date(order.orderDate).toDateString('dd/MM/yyyy'))}</td>
+                                <td>{(new Date(order.orderTime).toTimeString('en-US', { hour: 'numeric', hour12: true }))}</td>
+                                <td>{order.email}</td>
+                            </tr>)
+                        }
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 };

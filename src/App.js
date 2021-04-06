@@ -8,7 +8,6 @@ import {
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Admin from './components/Admin/Admin';
-import Header from './components/Header/Header';
 import Orders from './components/Orders/Orders';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';

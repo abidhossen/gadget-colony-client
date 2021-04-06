@@ -3,8 +3,11 @@
     font-weight: 700;
 }
 .header-title h2{
-    padding-left: 40px!important;
+    padding-left: 200px!important;
     font-weight: 700;
+}
+.header-nav{
+    padding-left: 375px!important;
 }
 .header-nav a{
     color: black;
@@ -14,4 +17,64 @@
 }
 a:hover{
     color: black!important;
+}
+
+@media only screen and (max-width:1599px){
+    .header-nav{
+        padding-left: 300px!important;
+    }
+}
+@media only screen and (max-width:1456px){
+    .header-title h2{
+        padding-left: 150px!important;
+    }
+    .header-nav{
+        padding-left: 250px!important;
+    }
+}
+@media only screen and (max-width:1360px){
+    .header-title h2{
+        padding-left: 130px!important;
+    }
+    .header-nav{
+        padding-left: 150px!important;
+    }
+}
+
+@media only screen and (max-width:1160px){
+    .header-title h2{
+        padding-left: 80px!important;
+    }
+    .header-nav{
+        padding-left: 70px!important;
+    }
+}
+@media only screen and (max-width:992px){
+    .header-title h2{
+        padding-left: 40px!important;
+    }
+    .header-nav{
+        padding-left: 0px!important;
+    }
+}
+@media only screen and (max-width:878px){
+    .header-title h2{
+        text-align: center;
+        display:block;
+    }
+    .header-nav{
+        padding-left: 0px!important;
+    }
+    .header-nav a{
+        padding: 20px 15px;
+    }
+}
+@media only screen and (max-width:770px){
+    .header-nav{
+        text-align: center;
+        margin-top: 30px ;
+    }
+    .header-nav a{
+        padding: 20px;
+    }
 }

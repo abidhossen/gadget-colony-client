@@ -3,7 +3,7 @@ import Axios from 'axios'
 import axios from 'axios';
 
 const AddProduct = () => {
-    const url = 'http://localhost:4000/addProduct'
+    const url = 'https://tranquil-cliffs-66527.herokuapp.com/addProduct'
     const [imageURL, setImageURL]= useState({});
     const [product, setProduct] = useState({
         name: '',

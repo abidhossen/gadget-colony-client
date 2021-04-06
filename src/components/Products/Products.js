@@ -1,36 +1,51 @@
-import React from 'react';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './Products.css'
-import { Card } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+
+
+
+const useStyles = makeStyles({
+    root: {
+        maxWidth: 345,
+    },
+});
 
 const Products = (props) => {
-    const {name,image,price,description,_id}=props.product
+    const { name, image, price, description, _id } = props.product
     const history = useHistory();
-    const handleProduct=() =>{
-        history.push('/checkout')
+    const handleProduct = () => {
+        history.push('/home')
     }
+    const classes = useStyles();
     return (
         <div>
-            <Card className="text-center">
-            <div className="product-logo">
-                <Card.Img variant="top" src={image} />
-            </div>
-            <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>
-                   {description}
-                </Card.Text>
-                
-            </Card.Body>
-            <div className="price-area">
-                <h3>$ {price}</h3>
-                <Link to={`/checkout/${_id}`}><button
-                 onClick={handleProduct}
-                 className="btn btn-primary"><FontAwesomeIcon icon={faShoppingCart} /> Buy Now</button></Link>
-                </div>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <div className="product-logo">
+                        <img src={image} alt="" />
+                    </div>
+                    <CardContent >
+                        <Typography gutterBottom variant="h6" component="h2">
+                            {name}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {description}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <div className="purchase-area">
+                    <h3>${price}</h3><Link to={`/checkout/${_id}`}>
+                        <button className="btn btn-primary" onClick={handleProduct}>
+                        <FontAwesomeIcon icon={faShoppingCart} /> Buy Now</button>
+                    </Link>
+                    </div>
             </Card>
         </div>
     );

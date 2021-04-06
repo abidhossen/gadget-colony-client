@@ -4,14 +4,25 @@
     gap: 100px;
     padding-bottom: 10px;
 }
-.card{
-    margin-top:30px;
-    height: 400px;
-}
+
 .product-logo{
     text-align: center;
 }
 .product-logo img{
     margin-top: 15px;
     width: 50%;
+    height: 140px
+}
+.MuiPaper-root{
+    height: 370px;
+    margin-top: 40px;
+}
+.MuiCardContent-root{
+    text-align: center;
+}
+.purchase-area{
+    display: flex;
+    width:100%;
+    justify-content:space-around;
+    padding: 5px;
 }
