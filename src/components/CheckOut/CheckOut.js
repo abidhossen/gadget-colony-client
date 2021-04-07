@@ -30,7 +30,7 @@ const CheckOut = () => {
     };
     const handleOrder=() =>{
        const newOrder= {...loggedInUser,...selectedDate,...productInfo}
-       fetch('http://cors-anywhere.herokuapp.com/tranquil-cliffs-66527.herokuapp.com/addOrder',{
+       fetch('https://cors-anywhere.herokuapp.com/tranquil-cliffs-66527.herokuapp.com/addOrder',{
            method:'POST',
            headers: {'Content-Type': 'application/json'},
            body: JSON.stringify(newOrder)
