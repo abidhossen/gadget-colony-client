@@ -19,7 +19,7 @@ const Header = () => {
                     <Link to='/home'>Home</Link>
                     <Link to='/admin'>Admin</Link>
                     <Link to='/orders'>Orders</Link>
-                    <Link to='/login'><Button variant='primary'>{loggedInUser?`${loggedInUser.name}`:'Log In'}</Button></Link>
+                    <Link to='/login'><Button variant='primary'>Log In</Button></Link>
                 </nav>
             </div>
         </div>
