@@ -3,7 +3,8 @@ import React from 'react';
 const EditProduct = () => {
     return (
         <div>
-            <h2>Edit Product</h2>
+            <h3>Edit Product</h3>
+            <p>This feature will be available soon.</p>
         </div>
     );
 };

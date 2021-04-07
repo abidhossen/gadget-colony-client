@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Axios from 'axios'
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const AddProduct = () => {
     const url = 'https://tranquil-cliffs-66527.herokuapp.com/addProduct'
@@ -42,24 +44,24 @@ const AddProduct = () => {
    
     return (
         <div>
-            <h2>Add Product</h2>
-            <form onSubmit={(e)=>handleSubmit(e)}>
+            <h3 className="mb-5">  Add Product</h3>
+            <form  onSubmit={(e)=>handleSubmit(e)}>
                 <p>
                     <span>Product Name: </span>
-                    <input type="text" id="name" value={product.name} placeholder="Product Name" onChange={(e)=>handleChange(e)}/>
+                    <input className="form-control" type="text" id="name" value={product.name} placeholder="Product Name" onChange={(e)=>handleChange(e)}/>
                 </p>
                 <p>
                     <span>Description: </span> 
-                    <input type="text" id="description" value={product.description} placeholder="Description" onChange={(e)=>handleChange(e)} />
+                    <input className="form-control" type="text" id="description" value={product.description} placeholder="Description" onChange={(e)=>handleChange(e)} />
                 </p>
                 <p>
                     <span>Price: </span>
-                    <input type="text" value={product.price} id="price" placeholder="Price" onChange={(e)=>handleChange(e)} />
+                    <input className="form-control" type="text" value={product.price} id="price" placeholder="Price" onChange={(e)=>handleChange(e)} />
                 </p>
                 <p>
-                    <span>Product Image</span><input type="file" id="image" onChange={handleImageUpload} />
+                    <span>Product Image</span><input className="form-control" type="file" id="image" onChange={handleImageUpload} />
                 </p>
-              <button className="btn btn-primary">Add Product</button>
+              <button className="btn btn-primary"><FontAwesomeIcon icon={faPlus} /> Add Product</button>
             </form>
         </div>
     );

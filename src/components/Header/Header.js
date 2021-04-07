@@ -8,6 +8,7 @@ import './Header.css'
 
 const Header = () => {
     let [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(loggedInUser)
     return (
         <div className="header row">
             <div className="header-title col-md-6 col-sm-12">
@@ -18,8 +19,7 @@ const Header = () => {
                     <Link to='/home'>Home</Link>
                     <Link to='/admin'>Admin</Link>
                     <Link to='/orders'>Orders</Link>
-                    <Link to='/login'><Button variant='primary'>Log In</Button></Link>
-                    <h4>{loggedInUser.email}</h4>
+                    <Link to='/login'><Button variant='primary'>{loggedInUser?`${loggedInUser.name}`:'Log In'}</Button></Link>
                 </nav>
             </div>
         </div>

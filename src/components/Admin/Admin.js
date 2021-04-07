@@ -1,8 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
-
+import './Admin.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faTasks, faEdit } from '@fortawesome/free-solid-svg-icons'
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,72 +10,26 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import AdminRoute from '../AdminRoute/AdminRoute';
-
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-    },
-    // appBar: {
-    //     width: `calc(100% - ${drawerWidth}px)`,
-    //     marginLeft: drawerWidth,
-    // },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-    },
-    // drawerPaper: {
-    //     width: drawerWidth,
-    // },
-    // necessary for content to be below app bar
-    // toolbar: theme.mixins.toolbar,
-    content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing(3),
-    },
-}));
-
+import Header from '../Header/Header';
 
 
 const Admin = () => {
     let { path, url } = useRouteMatch();
-    const classes = useStyles();
     return (
-        <div className={classes.root}>    
-            <Drawer
-                className={classes.drawer}
-                variant="permanent"
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
-                anchor="left"
-            >
-                <h2>Gadget Colony</h2>
-                <Divider />
-                    <ul>
-                        <li>
-                            <Link to={`${url}/addProduct`}>Add Product</Link>
-                        </li>
-                        <li>
-                            <Link to={`${url}/manageProduct`}>Manage Product</Link>
-                        </li>
-                        <li>
-                            <Link to={`${url}/editProduct`}>Edit Product</Link>
-                        </li>
-                    </ul>
-                <Divider />
-            </Drawer>
-            <main className={classes.content}>
-                <div  />
+        <div>
+            <div class="sidebar">
+                <Link to='/home' className="sidebar-header">Gadget Colony</Link>
+                <Link to={`${url}/addProduct`}> <FontAwesomeIcon icon={faPlus} /> Add Product</Link>
+                <Link to={`${url}/manageProduct`}><FontAwesomeIcon icon={faTasks} /> Manage Product</Link>
+                <Link to={`${url}/editProduct`}><FontAwesomeIcon icon={faEdit} /> Edit Product</Link>
+            </div>
+            <div class="content">
                 <Switch>
                     <Route path={`${path}/:navId`}>
                         <AdminRoute></AdminRoute>
                     </Route>
                 </Switch>
-            </main>
+            </div>
         </div>
     );
 };
