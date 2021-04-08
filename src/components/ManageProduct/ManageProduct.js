@@ -15,7 +15,7 @@ const ManageProduct = () => {
             .then(data => setProduct(data))
     }, [])
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/delete/${id}`)
+        axios.delete(`https://tranquil-cliffs-66527.herokuapp.com/delete/${id}`)
         .then(res => {
           console.log(res);
           console.log(res.data);
