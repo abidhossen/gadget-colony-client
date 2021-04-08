@@ -33,18 +33,6 @@ const CheckOut = () => {
     const handleOrder=() =>{
         const url ="https://tranquil-cliffs-66527.herokuapp.com/addOrder"
         const newOrder= {...loggedInUser,...selectedDate,...productInfo};
-    //    console.log(newOrder);
-    //    fetch('https://tranquil-cliffs-66527.herokuapp.com/addOrder',{
-    //        method:'POST',
-    //        headers: {'Content-Type': 'application/json'},
-    //        body: JSON.stringify(newOrder)
-    //    })
-    //    .then(res=>res.json())
-    //    .then(data=>{
-    //        console.log(data);
-    //    })
-    
-
      Axios.post(url,{
        email:newOrder.email, price:newOrder.price, date: newOrder.orderDate, time:newOrder.orderTime, name: newOrder.name
      })
@@ -60,7 +48,6 @@ const CheckOut = () => {
             .then(res => res.json())
             .then(data => setProductInfo(data))
     }, [])
-    console.log(productInfo)
     return (
         <div>
             <div className="header-container">

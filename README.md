@@ -7,6 +7,8 @@ Features of this website:
 5) The information of that check out page will be saved to a database
 6) User can browse to order page to see how many orders he or she has, which product he or she ordered, the time and date when he or she ordered and his or her info.
 7) In the homepage user will see a beautiful spinner if the product take time to load. :)
+8) There is a manage product system where an user can delete any undesired item from his/her store
+9) Lastly there is a beautiful spinner if the product page loads a bit lately
 
 live site: https://gadget-colony.web.app/
 
