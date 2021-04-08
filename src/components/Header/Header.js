@@ -8,7 +8,7 @@ import './Header.css'
 
 const Header = () => {
     let [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    console.log(loggedInUser)
+    // console.log(loggedInUser)
     return (
         <div className="header row">
             <div className="header-title col-md-6 col-sm-12">

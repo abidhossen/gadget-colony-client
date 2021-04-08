@@ -8,12 +8,13 @@ const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('https://tranquil-cliffs-66527.herokuapp.com/orders?email=' + loggedInUser.email)
+        fetch('http://tranquil-cliffs-66527.herokuapp.com/orders?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
             })
     }, [])
+    console.log(orders)
     return (
         <div>
             <Header></Header>
@@ -35,8 +36,8 @@ const Orders = () => {
                             orders.map(order => <tr>
                                 <td>{order.name}</td>
                                 <td>${order.price}</td>
-                                <td>{(new Date(order.orderDate).toDateString('dd/MM/yyyy'))}</td>
-                                <td>{(new Date(order.orderTime).toTimeString('en-US', { hour: 'numeric', hour12: true }))}</td>
+                                <td>{(new Date(order.date).toDateString('dd/MM/yyyy'))}</td>
+                                <td>{(new Date(order.time).toTimeString('en-US', { hour: 'numeric', hour12: true }))}</td>
                                 <td>{order.email}</td>
                             </tr>)
                         }
