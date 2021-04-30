@@ -1,4 +1,6 @@
-Buy your daily useful gadgets at a very cheap rate. Here Presenting the Gadget Colony
+
+live site: https://gadget-colony.web.app/
+Buy your daily useful gadgets at a very cheap rate. Here Presenting the Gadget Colony an e-commerce website.
 Features of this website:
 1) Home page loades products from database which anyone can add from the admin section of the website by just simply logging in.
 2) Any one after signing in can buy any product. Then the product one choose will be proceed for checking out.
@@ -10,5 +12,4 @@ Features of this website:
 8) There is a manage product system where an user can delete any undesired item from his/her store
 9) Lastly there is a beautiful spinner if the product page loads a bit lately
 
-live site: https://gadget-colony.web.app/
 
